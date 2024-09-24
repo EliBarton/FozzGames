@@ -20,7 +20,7 @@
 <body class="bg-dark text-light">
     <header class="container-fluid">
         <nav class="navbar navbar-dark">
-            <p class="navbar-brand">FozzGames</p>
+            <p class="navbar-brand">GalagaOnline</p>
         <menu class="navbar-nav ">
                 <li class="nav-item"><a class="nav-link active" href="index.html">Welcome</a></li>
                 <li class="nav-item" id="playControls"><a class="nav-link" href="play.html">Play</a></li>
@@ -31,14 +31,27 @@
     </header>
     <main class="container-fluid text-center">
         <div class="alert-container"></div>
-            <p class="Welcome">Welcome to The Website!
+            <p class="Welcome">Welcome to GalagaOnline!
         </p>
-        <p style="font-size: x-large; text-align: center; margin: 6px;"></p>
+        <p style="font-size: x-large; text-align: center; margin: 6px;">Login</p>
         <div style="width: 250px; border: solid grey thick; padding: 10px;">
+        <div id="loginControls">
+            <div class="form-group">
+            <label for="name">Username</label>
+            <input type="text" id="username" placeholder="Enter username" />
+            </div>
+            <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" id="password" placeholder="Your password here" />
+            </div>
+            <button type="submit" class="btn btn-success" onclick="loginUser()">Login</button>
+            <button type="submit" class="btn btn-success" onclick="createUser()">Create</button>
+        </div>
           <!-- Displayed when ready to play -->
         <div id="playControls">
             <div id="playerName"></div>
             <button type="button" class="btn btn-primary" onclick="play()">Play</button>
+            <button type="button" class="btn btn-secondary" onclick="logout()">Logout</button>
           </div>
         </div>
     </main>

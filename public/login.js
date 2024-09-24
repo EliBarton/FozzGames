@@ -1,18 +1,5 @@
 getBackgroundImage();
 
-(async () => {
-  const userName = localStorage.getItem('userName');
-  if (userName) {
-    console.log("user known")
-    document.querySelector('#playerName').textContent = userName;
-    setDisplay('loginControls', 'none');
-    setDisplay('playControls', 'block');
-  } else {
-    console.log("user not known")
-    setDisplay('loginControls', 'block');
-    setDisplay('playControls', 'none');
-  }
-})();
 
 async function loginUser() {
   loginOrCreate(`/api/auth/login`);
