@@ -8,12 +8,6 @@ const port = process.argv.length > 2 ? process.argv[2] : 3000;
 app.use(express.json());
 
 
-// Header necessary to run the galaga game
-app.use((req, res, next) => {
-  res.setHeader('Cross-Origin-Opener-Policy', 'same-origin');
-  res.setHeader('Cross-Origin-Embedder-Policy', 'credentialless');
-  next();
-});
 
 // Serve up the front-end static content hosting
 app.use(express.static('public'));
