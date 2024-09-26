@@ -20,7 +20,6 @@ if (typeof window === 'undefined') {
             coepCredentialless = ev.data.value;
         }
     });
-
     self.addEventListener("fetch", function (event) {
         const r = event.request;
         if (r.cache === "only-if-cached" && r.mode !== "same-origin") {
@@ -105,7 +104,7 @@ if (typeof window === 'undefined') {
                 n.serviceWorker.controller.postMessage({ type: "deregister" });
             }
         }
-
+        
         // If we're already coi: do nothing. Perhaps it's due to this script doing its job, or COOP/COEP are
         // already set from the origin server. Also if the browser has no notion of crossOriginIsolated, just give up here.
         if (window.crossOriginIsolated !== false || !coi.shouldRegister()) return;
