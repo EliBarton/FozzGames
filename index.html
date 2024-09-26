@@ -5,6 +5,7 @@
     <meta charset="UTF-8" />
     <!-- Tell browsers not to scale the viewport automatically -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="Cross-Origin-Embedder-Policy" content="require-corp">
     <title>FozzGames</title>
     <link rel="icon" href="favicon.ico" />
     
@@ -23,12 +24,14 @@
             <p class="navbar-brand">FozzGames</p>
         <menu class="navbar-nav ">
                 <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
+                
         </menu>
     </nav>
     </header>
     <main class="container-fluid text-center">
         <div class="alert-container"></div>
             <p class="Welcome">Welcome to The Website!
+            <iframe src="game/index.html" width="480px" height="600px" onclick=""></iframe>
         </p>
     </main>
 
@@ -40,5 +43,12 @@
     Wow look at this cool hidden text! You are cool if you see this.
 </p>
 </body>
-<script src="login.js"></script>
+<script src="index.js"></script>
+<script src="coi-serviceworker.js"></script>
+<script src="game/index.js"></script>
+<script>
+    var engine = new Engine("game/index.pck");
+    engine.startGame();
+    if (!crossOriginIsolated) SharedArrayBuffer = ArrayBuffer
+</script>
 </html>
