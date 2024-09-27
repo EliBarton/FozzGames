@@ -7,11 +7,6 @@ url: "https://EliBarton.github.io/fozzgames" # Your site's URL
 # Markdown processor
 markdown: kramdown
 
-
-# Build settings
-# Use safe to true to restrict Jekyll to built-in plugins for GitHub Pages compatibility
-safe: true
-
 # If you're using GitHub Pages with a custom domain
 # (remove this section if you're not using a custom domain)
 #domain: "www.yourcustomdomain.com"
