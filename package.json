@@ -18,6 +18,7 @@
   "homepage": "https://github.com/EliBarton/startup#readme",
   "dependencies": {
     "bcrypt": "^5.1.1",
+    "bundler": "^0.8.0",
     "cookie-parser": "^1.4.6",
     "express": "^4.21.0",
     "github-pages": "^0.1.0",

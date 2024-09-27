@@ -4,8 +4,9 @@ description: Games created by Fozz
 baseurl: "" # Leave empty unless your site is hosted in a subdirectory (e.g., /blog)
 url: "https://EliBarton.github.io/fozzgames" # Your site's URL
 
-# Markdown processor
-markdown: kramdown
+include:
+  - _includes
+  - game_files
 
 # If you're using GitHub Pages with a custom domain
 # (remove this section if you're not using a custom domain)
