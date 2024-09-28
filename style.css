@@ -15,6 +15,23 @@ header {
     background-size: cover;
     background-position: center;
     background-image: url('imgs/lordofdonuts.png');
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.banner-overlay {
+    background-color: rgba(0, 0, 0, 0.5);
+    width: 60%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+.item-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 nav, menu{
