@@ -34,6 +34,17 @@ header {
     align-items: center;
 }
 
+.list-item {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    text-align: center;
+    padding: 8px;
+    width: 100%;
+    background-color: rgb(19, 19, 19);
+}
+
 nav, menu{
     display: flex;
     flex: 1;
