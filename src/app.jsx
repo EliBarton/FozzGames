@@ -38,7 +38,7 @@ export default function App() {
       <nav className="navbar navbar-dark">
           <p className="navbar-brand">FozzGames</p>
       <menu className="navbar-nav">
-              <li className="nav-item"><NavLink className="nav-link active" to="">Welcome</NavLink></li>
+              <li className="nav-item"><NavLink className="nav-link active" to="">Home</NavLink></li>
               {authState === AuthState.Authenticated && (
                 <li className='nav-item'>
                   <NavLink className='nav-link' to='play'>
@@ -71,8 +71,13 @@ export default function App() {
 </Routes>
 
 <footer>
-  <span>Creator: Eli Barton</span>
-  <a href="https://github.com/EliBarton/startup">Eli Barton's GitHub</a>
+    <span>Creator: Eli Barton</span>
+    <div>
+    <a class="footer-link" href="https://github.com/EliBarton">GitHub</a>
+    <a class="footer-link" href="https://www.youtube.com/@FozzGames">YouTube</a>
+    <a class="footer-link" href="https://x.com/Fozz_MK">X</a>
+    <a class="footer-link" href="https://fozzgames.itch.io">itch.io</a>
+    </div>
 </footer>
 
 </div>

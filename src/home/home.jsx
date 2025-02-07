@@ -5,7 +5,7 @@ const HomePage = () => {
         <>
             <main className="container-fluid text-center">
                 <div className="contact-bar"><a href="mailto:elidbarton@gmail.com">Contact us</a></div>
-                <p className="Welcome">Fozz Games</p>
+                <p className="Welcome"></p>
                 <p>Featured game:</p>
                 <div className="banner">
                     <div className="banner-overlay">
