@@ -1,0 +1,35 @@
+
+const HomePage = () => {
+    return (
+        <>
+            <main class="container-fluid text-center">
+                <div class="contact-bar"><a href="mailto:elidbarton@gmail.com">Contact us</a></div>
+                <p class="Welcome">Fozz Games
+                </p>
+                <p>Featured game:</p>
+                <div class="banner" style="background-image: url('imgs/lordofdonuts.png')">
+                    <div class="banner-overlay">
+                        <p class="Welcome">Lord of the Donuts
+                        </p>
+                        <button type="button" class="btn btn-primary btn-lg" onclick="window.location.href='game_pages/lordofdonuts.html'">Play</button>
+                        <p style="margin: 3em;">Todd must save his donuts, and the world.</p>
+                    </div>
+                </div>
+
+                <p>Latest:</p>
+
+                <div class="item-list">
+                    <li>
+                        <a class="list-item" href="game_pages/lordofdonuts.html">
+                            <img src="imgs/lordofdonuts.png" alt="Lord of the Donuts" height="100" /> Lord of the Donuts</a>
+                    </li>
+                    <li>
+                        <a class="list-item" href="game_pages/galaga.html">
+                            <img src="imgs/galaga.png" alt="Galaga Online" height="100" /> Galaga Online</a>
+                    </li>
+                </div>
+            </main>
+        </>
+    );
+}
+export default HomePage

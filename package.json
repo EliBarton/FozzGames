@@ -1,31 +1,25 @@
 {
   "name": "galaga-online",
-  "version": "1.0.0",
-  "description": "Play galaga online",
-  "main": "index.js",
+  "version": "0.1.0",
+  "private": true,
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/EliBarton/startup.git"
+  "devDependencies": {
+    "vite": "^5.4.14"
   },
-  "author": "",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/EliBarton/startup"
-  },
-  "homepage": "https://github.com/EliBarton/startup#readme",
   "dependencies": {
-    "bcrypt": "^5.1.1",
-    "bundler": "^0.8.0",
-    "cookie-parser": "^1.4.6",
-    "express": "^4.21.0",
-    "github-pages": "^0.1.0",
-    "jekyll": "^3.0.0-beta1",
-    "mongodb": "^6.5.0",
-    "nodejs": "^0.0.0",
-    "uuid": "^9.0.1",
-    "ws": "^8.16.0"
-  }
+    "bootstrap": "^5.3.3",
+    "react": "^18.3.1",
+    "react-bootstrap": "^2.10.2",
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.22.3"
+  },
+  "description": "Do you want to find out if you are the best Galaga player ever? This game is an endless space shooter game similar to Galaga but there is an online score leaderboard. You can compete with your friends to try to get the highest score. The high scores update live and you claim your high schore using your account so that you can clearly see who is winning in a close contest.",
+  "main": "index.js",
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
 }
