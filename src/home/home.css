@@ -1,0 +1,18 @@
+.contact-bar {
+    position: fixed;
+    top: 50%;
+    right: 0;
+    transform: rotate(-90deg) translateY(-50%);
+    transform-origin: right center;
+    padding: 2px;
+    padding-inline: 5px;
+    background-color: #ffffff;
+    color: blue;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+}
+
+.contact-bar:hover {
+    background-color: #343434;
+}

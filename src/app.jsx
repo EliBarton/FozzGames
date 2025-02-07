@@ -36,7 +36,7 @@ export default function App() {
   <div className="bg-dark text-light app">
   <header className="container-fluid">
       <nav className="navbar navbar-dark">
-          <p className="navbar-brand">GalagaOnline</p>
+          <p className="navbar-brand">FozzGames</p>
       <menu className="navbar-nav">
               <li className="nav-item"><NavLink className="nav-link active" to="">Welcome</NavLink></li>
               {authState === AuthState.Authenticated && (
@@ -54,9 +54,6 @@ export default function App() {
                 </li>
               )}
       </menu>
-      {authState === AuthState.Authenticated && (
-        <p className="nav" id="playername">{userName}</p>
-      )}
   </nav>
   </header>
 
