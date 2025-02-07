@@ -73,10 +73,10 @@ export default function App() {
 <footer>
     <span>Creator: Eli Barton</span>
     <div>
-    <a class="footer-link" href="https://github.com/EliBarton">GitHub</a>
-    <a class="footer-link" href="https://www.youtube.com/@FozzGames">YouTube</a>
-    <a class="footer-link" href="https://x.com/Fozz_MK">X</a>
-    <a class="footer-link" href="https://fozzgames.itch.io">itch.io</a>
+    <a className="footer-link" href="https://github.com/EliBarton">GitHub</a>
+    <a className="footer-link" href="https://www.youtube.com/@FozzGames">YouTube</a>
+    <a className="footer-link" href="https://x.com/Fozz_MK">X</a>
+    <a className="footer-link" href="https://fozzgames.itch.io">itch.io</a>
     </div>
 </footer>
 
