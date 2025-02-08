@@ -21,11 +21,11 @@ const HomePage = () => {
                 <div className="item-list">
                     <li>
                         <a className="list-item" href="game_pages/lordofdonuts.html">
-                            <img src="imgs/lordofdonuts.png" alt="Lord of the Donuts" height="100" /> Lord of the Donuts</a>
+                            <img src={`${import.meta.env.BASE_URL}/imgs/lordofdonuts.png`} alt="Lord of the Donuts" height="100" /> Lord of the Donuts</a>
                     </li>
                     <li>
                         <a className="list-item" href="game_pages/galaga.html">
-                            <img src="imgs/galaga.png" alt="Galaga Online" height="100" /> Galaga Online</a>
+                            <img src={`${import.meta.env.BASE_URL}/imgs/galaga.png`} alt="Galaga Online" height="100" /> Galaga Online</a>
                     </li>
                 </div>
             </main>

@@ -32,7 +32,7 @@ export default function App() {
       const userName = localStorage.getItem('username');
     })();
   }, []);
-  return <BrowserRouter>
+  return <BrowserRouter basename='FozzGames'>
   <div className="bg-dark text-light app">
   <header className="container-fluid">
       <nav className="navbar navbar-dark">
