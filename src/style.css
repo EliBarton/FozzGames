@@ -14,7 +14,7 @@ header {
     height: 60%;
     background-size: cover;
     background-position: center;
-    background-image: url('imgs/lordofdonuts.png');
+    background-image: url('/imgs/lordofdonuts.png');
     display: flex;
     align-items: center;
     justify-content: center;
