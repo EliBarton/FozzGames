@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const HomePage = () => {
     return (
@@ -11,7 +12,7 @@ const HomePage = () => {
                     <div className="banner-overlay">
                         <p className="Welcome">Lord of the Donuts
                         </p>
-                        <button type="button" className="btn btn-primary btn-lg">Play</button>
+                        <Link type="button" className="btn btn-primary btn-lg" to='games/lordofdonuts'>Play</Link>
                         <p>Todd must save his donuts, and the world.</p>
                     </div>
                 </div>
@@ -20,12 +21,14 @@ const HomePage = () => {
 
                 <div className="item-list">
                     <li>
-                        <a className="list-item" href="game_pages/lordofdonuts.html">
-                            <img src={`${import.meta.env.BASE_URL}/imgs/lordofdonuts.png`} alt="Lord of the Donuts" height="100" /> Lord of the Donuts</a>
+                        <Link className="list-item" to="games/lordofdonuts">
+                            <img src={`${import.meta.env.BASE_URL}/imgs/lordofdonuts.png`} alt="Lord of the Donuts" height="100" />
+                            Lord of the Donuts</Link>
                     </li>
                     <li>
-                        <a className="list-item" href="game_pages/galaga.html">
-                            <img src={`${import.meta.env.BASE_URL}/imgs/galaga.png`} alt="Galaga Online" height="100" /> Galaga Online</a>
+                        <Link className="list-item" to="games/galaga">
+                            <img src={`${import.meta.env.BASE_URL}/imgs/galaga.png`} alt="Galaga Online" height="100" />
+                            Galaga Online</Link>
                     </li>
                 </div>
             </main>
