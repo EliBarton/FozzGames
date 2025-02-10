@@ -78,6 +78,11 @@ menu{
     margin: 0;
 }
 
+.nav-link.active {
+    font-weight: bold;
+    color: whitesmoke !important;
+  }
+
 main{
     display: flex;
     flex-direction: column;

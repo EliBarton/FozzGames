@@ -1,6 +1,4 @@
 import { NavLink, Route, Routes } from "react-router-dom";
-import { LordOfDonuts } from "../games/gamewindows/lordofdonuts";
-import { Galaga } from "../games/gamewindows/galaga";
 
 
 export const GamesList = () => {
