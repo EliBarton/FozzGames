@@ -3,11 +3,13 @@ import { NotFound } from "../app";
 import { GamesList } from "../gameslist/gameslist";
 import { Galaga } from "./gamewindows/galaga";
 import { LordOfDonuts } from "./gamewindows/lordofdonuts";
+import { DogBubbles } from "./gamewindows/dogbubbles";
 
 export const Games = () => {
     return (
             <main className="container-fluid text-center">
                 <Routes>
+                    <Route path='dogbubbles' element={<DogBubbles />}/>
                     <Route path='galaga' element={<Galaga />}/>
                     <Route path='lordofdonuts' element={<LordOfDonuts />}/>
                     <Route path='/' element={<p/>}/>
