@@ -17,3 +17,8 @@ ol {
     min-width: 50px;
     text-align: right;
 }
+
+main{
+    display: flex;
+    flex: 1 calc(100vh - 199px) !important;
+}

@@ -1,4 +1,5 @@
 import React from 'react';
+import './scores.css'
 
 export function Scores() {
   const [scores, setScores] = React.useState([]);
@@ -46,7 +47,8 @@ export function Scores() {
 
 
   return (
-      <main>
+    <main>
+      <main className="container-fluid">
         <div className="Leaderboard">
         <h1 style={{ textAlign: 'center' }}>Leaderboard</h1>
             <ol>
@@ -54,6 +56,7 @@ export function Scores() {
             </ol>
         </div>
 
+    </main>
     </main>
   );
 }

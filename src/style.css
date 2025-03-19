@@ -50,7 +50,7 @@ menu{
 main{
     display: flex;
     flex-direction: column;
-    flex: 1 calc(100vh - 100px);
+    flex: 1 calc(100vh - 199px) !important;
     align-items: center;
 }
 
