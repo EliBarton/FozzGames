@@ -1,0 +1,19 @@
+.Leaderboard {
+    width: 300px;
+    margin: 0 auto;
+}
+
+ol {
+    list-style: none;
+    padding: 0 !important;
+}
+
+.player-name {
+    flex-grow: 1;
+}
+
+.score {
+    margin-left: 20px;
+    min-width: 50px;
+    text-align: right;
+}
