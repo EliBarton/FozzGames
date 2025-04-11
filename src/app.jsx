@@ -32,30 +32,30 @@ export default function App() {
   return (
     <BrowserRouter basename="FozzGames">
       <div className="app bg-dark text-light">
-        <header className="container-fluid">
-          <nav className="navbar navbar-dark">
-            <p className="navbar-brand">FozzGames</p>
-            <menu className="navbar-nav">
+      <header className="container-fluid">
+        <nav className="navbar navbar-dark">
+          <p className="navbar-brand">FozzGames</p>
+          <menu className="navbar-nav">
+            <li className="nav-item">
+              <NavLink className="nav-link" to="">
+                Home
+              </NavLink>
+            </li>
+            <li className="nav-item">
+              <NavLink className="nav-link" to="games">
+                Games
+              </NavLink>
+            </li>
+            {authState === AuthState.Authenticated && (
               <li className="nav-item">
-                <NavLink className="nav-link" to="">
-                  Home
+                <NavLink className="nav-link" to="scores">
+                  Scores
                 </NavLink>
               </li>
-              <li className="nav-item">
-                <NavLink className="nav-link" to="games">
-                  Games
-                </NavLink>
-              </li>
-              {authState === AuthState.Authenticated && (
-                <li className="nav-item">
-                  <NavLink className="nav-link" to="scores">
-                    Scores
-                  </NavLink>
-                </li>
-              )}
-            </menu>
-          </nav>
-        </header>
+            )}
+          </menu>
+        </nav>
+      </header>
         <main>
           <Routes>
             {/* Uncomment below if you need the Login route */}
