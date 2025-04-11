@@ -1,15 +1,31 @@
-
-body{
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
     font-family: sans-serif;
+    background-color: #f4f4f4; /* Light background */
+    color: #333; /* Dark text */
+}
+
+body {
     display: flex;
     flex-direction: column;
+    min-height: 100vh;
 }
 
 header {
-    background-color: darkslategray;
+    background-color: #333; /* Dark background */
+    color: #fff; /* Light text */
+    padding: 1em 0;
 }
 
-nav, menu{
+main {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+nav, menu {
     display: flex;
     flex: 1;
     flex-direction: row !important;
@@ -18,97 +34,81 @@ nav, menu{
     align-items: center;
     justify-content: flex-end;
 }
-
-nav{
+nav {
     flex-direction: column;
     margin: 0px;
 }
-
-
-.navbar-brand{
+.navbar-brand {
+    color: #fff !important;
     margin: 0px;
     padding-inline: 1em;
-    border: solid whitesmoke thin;
+    border: solid #fff thin;
     font-size: 1.5em;
 }
-
-menu{
+menu {
     padding-left: 2em;
     margin: 0px;
 }
-
-.nav-item{
+.nav-item {
     padding-left: 1.5em;
     margin: 0;
 }
-
 .nav-link.active {
     font-weight: bold;
-    color: whitesmoke !important;
+    color: #fff !important;
   }
-
-main{
-    display: flex;
-    flex-direction: column;
-    flex: 1 calc(100vh - 199px) !important;
-    align-items: center;
-}
-
-.Welcome{
+.Welcome {
     font-size: xx-large;
     padding: 7vh;
 }
-
-footer{
-    flex: 0 40px;
+footer {
+    background-color: #333; /* Dark background */
+    color: #fff; /* Light text */
     display: flex;
-    background-color: darkslategray !important;
-    flex-direction: row !important;
+    flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    text-align: center;
-    padding-inline: 2em;
-    padding-block: 1em;
+    padding: 1em 2em;
+    width: 100%;
 }
 
-
-h1{
-    margin-bottom: 20px !important;
-    border-bottom: solid wheat;
+h1 {
+    margin-bottom: 20px;
+    border-bottom: solid #eee; /* Light border */
+    color: #333;
 }
-
 li {
     font-size: medium;
     padding: 0;
     display: flex;
     justify-content: space-between;
     margin-bottom: 15px;
+    color: #333;
 }
 
-
-
+/* Common styles for iframes, alerts, etc */
 iframe {
-    margin: 2em;
+    margin: 1em; /* Reduced margin */
+    border: 1px solid #ddd; /* Light border */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
-
-#playerName{
-    font-size: large;
-    margin: 1em;
-    padding: 4px;
-    color: cadetblue;
-    background-color: black;
-}
-
-
 .alert {
-    padding: 10px !important;
-    background-color: #343434 !important;
-    color: white;
+    padding: 10px;
+    background-color: #f0f0f0;
+    color: #333;
     margin-bottom: 15px;
     opacity: 1;
     transition: opacity 0.6s;
-  }
-
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+#playerName {
+    font-size: large;
+    margin: 10px;
+    padding: 4px;
+    color: #333;
+    background-color: #f0f0f0;
+}
 .footer-link {
     padding-left: 1em;
 }
