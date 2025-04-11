@@ -1,7 +1,6 @@
-
 import React from 'react';
 import Button from 'react-bootstrap/Button';
-
+ 
 export function PreLogin(props){
     const [userName, setUserName] = React.useState(props.userName);
     const [password, setPassword] = React.useState('');
@@ -25,7 +24,7 @@ export function PreLogin(props){
         });
       
         if (response.ok) {
-          localStorage.setItem('userName', username);
+          localStorage.setItem('userName', userName);
           props.onLogin(userName)
         } else {
           const body = await response.json();
@@ -42,18 +41,17 @@ export function PreLogin(props){
       }
 
       return (
-        <div id="loginControls">
-            <div className="form-group">
-            <label>Username</label>
-            <input type="text" id="username" placeholder="Enter username" value={userName} onChange={handleUsernameChange} />
-            </div>
-            <div className="form-group">
-            <label>Password</label>
-            <input type="password" id="password" placeholder="Your password here" value={password} onChange={handlePasswordChange} />
-            </div>
-            <Button variant='primary' className="btn btn-success" onClick={loginUser}>Login</Button>
-            <Button variant='secondary' className="btn btn-success" onClick={createUser}>Create</Button>
-
+        <div className='login_body'>
+          <div className="form-group">
+          <label>Username</label>
+          <input type="text" id="username" placeholder="Enter username" value={userName} onChange={handleUsernameChange} />
+          </div>
+          <div className="form-group">
+          <label>Password</label>
+          <input type="password" id="password" placeholder="Your password here" value={password} onChange={handlePasswordChange} />
+          </div>
+          <Button variant='primary' className="btn btn-success" onClick={loginUser}>Login</Button>
+          <Button variant='secondary' className="btn btn-success" onClick={createUser}>Create</Button>
         </div>
       )
 

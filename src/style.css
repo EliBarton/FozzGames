@@ -1,67 +1,74 @@
+/* Reset margins, paddings and ensure the html/body fill the full height */
 html, body {
-    height: 100%;
     margin: 0;
     padding: 0;
+    height: 100%;
     font-family: sans-serif;
     background-color: #f4f4f4; /* Light background */
     color: #333; /* Dark text */
-}
-
-body {
+  }
+  
+  /* .app acts as our main container for the entire app */
+  .app {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
-}
-
-header {
+  }
+  
+  /* Header styling */
+  header {
     background-color: #333; /* Dark background */
     color: #fff; /* Light text */
     padding: 1em 0;
-}
-
-main {
-    flex-grow: 1;
+  }
+  
+  /* Style for navigation elements */
+  nav, menu {
     display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-nav, menu {
-    display: flex;
-    flex: 1;
-    flex-direction: row !important;
+    /* Removed flex: 1 to avoid unintended space stealing */
+    flex-direction: row;
     list-style: none;
     padding: 0 1em;
     align-items: center;
     justify-content: flex-end;
-}
-nav {
-    flex-direction: column;
-    margin: 0px;
-}
-.navbar-brand {
+  }
+  
+  .navbar-brand {
     color: #fff !important;
-    margin: 0px;
+    margin: 0;
     padding-inline: 1em;
     border: solid #fff thin;
     font-size: 1.5em;
-}
-menu {
+  }
+  
+  /* Navigation list */
+  .menu, .navbar-nav {
     padding-left: 2em;
-    margin: 0px;
-}
-.nav-item {
+    margin: 0;
+  }
+  
+  .nav-item {
     padding-left: 1.5em;
     margin: 0;
-}
-.nav-link.active {
+  }
+  
+  .nav-link.active {
     font-weight: bold;
     color: #fff !important;
   }
-.Welcome {
-    font-size: xx-large;
-    padding: 7vh;
-}
-footer {
+  
+  /* Main content area: allow it to expand and push the footer */
+  main {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 1em;  /* adjust padding as needed */
+    align-items: center;
+  }
+  
+  /* Footer styling: Always appears at the bottom */
+  footer {
     background-color: #333; /* Dark background */
     color: #fff; /* Light text */
     display: flex;
@@ -70,29 +77,43 @@ footer {
     align-items: center;
     padding: 1em 2em;
     width: 100%;
-}
-
-h1 {
+    margin-top: auto;  /* Ensures footer is pushed to the bottom */
+  }
+  
+  .footer-link {
+    margin-left: 1em;
+    color: #fff;
+    text-decoration: none;
+  }
+  
+  .footer-link:hover {
+    text-decoration: underline;
+  }
+  
+  /* Optional other element styles */
+  h1 {
     margin-bottom: 20px;
-    border-bottom: solid #eee; /* Light border */
+    border-bottom: solid #eee;
     color: #333;
-}
-li {
+  }
+  
+  li {
     font-size: medium;
     padding: 0;
     display: flex;
     justify-content: space-between;
     margin-bottom: 15px;
     color: #333;
-}
-
-/* Common styles for iframes, alerts, etc */
-iframe {
-    margin: 1em; /* Reduced margin */
-    border: 1px solid #ddd; /* Light border */
+  }
+  
+  /* Styles for iframes, alerts, etc. */
+  iframe {
+    margin: 1em;
+    border: 1px solid #ddd;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-.alert {
+  }
+  
+  .alert {
     padding: 10px;
     background-color: #f0f0f0;
     color: #333;
@@ -101,14 +122,13 @@ iframe {
     transition: opacity 0.6s;
     border: 1px solid #ddd;
     border-radius: 4px;
-}
-#playerName {
+  }
+  
+  #playerName {
     font-size: large;
     margin: 10px;
     padding: 4px;
     color: #333;
     background-color: #f0f0f0;
-}
-.footer-link {
-    padding-left: 1em;
-}
+  }
+  

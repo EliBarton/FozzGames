@@ -47,16 +47,15 @@ export function Scores() {
 
 
   return (
-    <main>
-      <main className="container-fluid">
-        <div className="Leaderboard">
-        <h1 style={{ textAlign: 'center' }}>Leaderboard</h1>
-            <ol>
-                {players}
-            </ol>
-        </div>
-
-    </main>
-    </main>
+    <div className="container-fluid">
+      <div className="Leaderboard">
+          <h1 style={{ textAlign: 'center' }}>Leaderboard</h1>
+          <ol>
+              {players}
+          </ol>
+      </div>
+    </div>
   );
 }
+
+

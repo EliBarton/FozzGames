@@ -6,16 +6,16 @@ import { LordOfDonuts } from "./gamewindows/lordofdonuts";
 import { DogBubbles } from "./gamewindows/dogbubbles";
 
 export const Games = () => {
-    return (
-            <main className="container-fluid text-center">
-                <Routes>
-                    <Route path='dogbubbles' element={<DogBubbles />}/>
-                    <Route path='galaga' element={<Galaga />}/>
-                    <Route path='lordofdonuts' element={<LordOfDonuts />}/>
-                    <Route path='/' element={<p/>}/>
-                    <Route path='*' element={<NotFound />} />
-                </Routes>
-                <GamesList />
-            </main>
-        );
+  return (
+    <div className="container-fluid text-center">
+      <Routes>
+        <Route path="dogbubbles" element={<DogBubbles />} />
+        <Route path="galaga" element={<Galaga />} />
+        <Route path="lordofdonuts" element={<LordOfDonuts />} />
+        <Route path="/" element={<p />} />
+        <Route path="*" element={<NotFound />} />
+      </Routes>
+      <GamesList />
+    </div>
+  );
 }

@@ -5,7 +5,7 @@ export const GamesList = () => {
 
 
     return (
-        <main className="container-fluid text-center">
+        <div className="container-fluid text-center">
             <p className="Welcome">
                 Games List
             </p>
@@ -15,6 +15,6 @@ export const GamesList = () => {
             </NavLink>
             <NavLink className='nav-link' to='lordofdonuts'>Lord of the Donuts
             </NavLink>
-        </main>
+        </div>
     );
 }
