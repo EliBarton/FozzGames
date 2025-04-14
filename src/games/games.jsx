@@ -4,6 +4,7 @@ import { GamesList } from "../gameslist/gameslist";
 import { Galaga } from "./gamewindows/galaga";
 import { LordOfDonuts } from "./gamewindows/lordofdonuts";
 import { DogBubbles } from "./gamewindows/dogbubbles";
+import "./games.css"
 
 export const Games = () => {
   return (

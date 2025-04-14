@@ -46,20 +46,36 @@ export default function App() {
                 Games
               </NavLink>
             </li>
-            {authState === AuthState.Authenticated && (
+            {/* {authState === AuthState.Authenticated && (
               <li className="nav-item">
                 <NavLink className="nav-link" to="scores">
                   Scores
                 </NavLink>
               </li>
+            )} */}
+            {authState === AuthState.Unauthenticated ? (
+              <li className="nav-item">
+                <NavLink className="nav-link" to="login">
+                  Login
+                </NavLink>
+              </li>
+            ) : (
+              <li className="nav-item">
+                <NavLink className="nav-link" to="login">
+                  {userName}
+                </NavLink>
+              </li>
             )}
           </menu>
         </nav>
-      </header>
+        </header>
         <main>
           <Routes>
-            {/* Uncomment below if you need the Login route */}
-            {/* <Route path='/' element={
+            <Route path="/" element={<HomePage />} />
+            <Route path="/games/*" element={<Games />} />
+            <Route path="/play" element={<Play userName={userName} />} />
+            <Route path="/scores" element={<Scores />} />
+            <Route path='/login' element={
               <Login 
                 userName={userName}
                 authState={authState}
@@ -68,11 +84,7 @@ export default function App() {
                   setUserName(userName);
                 }}
               />
-            } exact /> */}
-            <Route path="/" element={<HomePage />} />
-            <Route path="/games/*" element={<Games />} />
-            <Route path="/play" element={<Play userName={userName} />} />
-            <Route path="/scores" element={<Scores />} />
+            } exact />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </main>
