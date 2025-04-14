@@ -8,6 +8,8 @@ on:
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write # Add this line to grant write permissions to the contents of the repo
     steps:
       - name: Checkout
         uses: actions/checkout@v3
@@ -15,7 +17,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: 20 # or your Node.js version
+          node-version: 18 # or your Node.js version
 
       - name: Install dependencies
         run: npm install # or your package manager's install command
@@ -34,4 +36,5 @@ jobs:
       - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@v4
         with:
-          folder: docs 
+          folder: dist
+          branch: gh-pages
