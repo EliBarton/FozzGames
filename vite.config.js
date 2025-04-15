@@ -6,7 +6,7 @@ export default defineConfig({
   plugins: [react()],
   base: '/FozzGames/', // Replace with your actual GitHub repo name
   build: {
-    outDir: 'docs'
+    outDir: 'dist'
   },
   resolve: {
     alias: {
