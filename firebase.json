@@ -11,8 +11,8 @@
       "**/node_modules/**"
     ],
     "rewrites": [
-      {
-        "source": "**",
+          {
+        "source": "!**/*.js",
         "destination": "/index.html"
       }
     ]
