@@ -30,7 +30,7 @@ export default function App() {
   }, []);
 
   return (
-    <BrowserRouter basename="FozzGames">
+    <BrowserRouter basename="">
       <div className="app bg-dark text-light">
       <header className="container-fluid">
         <nav className="navbar navbar-dark">
