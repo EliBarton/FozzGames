@@ -4,7 +4,7 @@ import path from 'path'
 
 export default defineConfig({
   plugins: [react()],
-  base: '/FozzGames/', // Replace with your actual GitHub repo name
+  base: '/', // Replace with your actual GitHub repo name
   build: {
     outDir: 'dist'
   },
