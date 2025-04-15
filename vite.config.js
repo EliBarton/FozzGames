@@ -3,14 +3,14 @@ import react from '@vitejs/plugin-react';
 import path from 'path'
 
 export default defineConfig({
-  plugins: [react()],
-  base: '/', // Replace with your actual GitHub repo name
+  plugins: [react()], 
+  base: '/',
   build: {
     outDir: 'dist'
   },
   resolve: {
     alias: {
-      '@': path.resolve(__dirname, 'FozzGames')
+      '@': path.resolve(__dirname, '')
     }
   }
 });
