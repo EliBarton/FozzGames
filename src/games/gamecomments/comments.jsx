@@ -63,19 +63,25 @@ const CommentsSection = ({ gameId }) => {
   return (
         <div className="comments-section container comment-container">
             <h3 className="mb-3">Comments</h3>
-            {auth.currentUser && (
-                <form onSubmit={handleSubmit} className="mb-3">
-                    <div className="mb-2">
-                        <textarea
-                            className="form-control"
-                            value={newComment}
-                            onChange={handleInputChange}
-                            placeholder="Add a comment..."
-                            rows="3"
-                        />
-                    </div>
-                    <button type="submit" className="btn btn-primary">Post</button>
-                </form>
+            {auth.currentUser ? (
+              <form onSubmit={handleSubmit} className="mb-3">
+                <div className="mb-2">
+                  <textarea
+                    className="form-control"
+                    value={newComment}
+                    onChange={handleInputChange}
+                    placeholder="Add a comment..."
+                    rows="3"
+                  />
+                </div>
+                <button type="submit" className="btn btn-primary">
+                  Post
+                </button>
+              </form>
+            ) : (
+              <div className="mb-3">
+                <p>You must be logged in to comment.</p>
+              </div>
             )}
             <ul className="list-unstyled">
                 {comments.map(comment => (
