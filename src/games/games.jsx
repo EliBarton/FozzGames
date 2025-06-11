@@ -4,7 +4,7 @@ import { GamesList } from "../gameslist/gameslist";
 import { Galaga } from "./gamewindows/galaga";
 import { LordOfDonuts } from "./gamewindows/lordofdonuts";
 import { DogBubbles } from "./gamewindows/dogbubbles";
-import { WordGame } from "./gamewindows/wordgame";
+import { Hangman } from "./gamewindows/hangman";
 import "./games.css"
 
 export const Games = () => {
@@ -14,7 +14,7 @@ export const Games = () => {
         <Route path="dogbubbles" element={<DogBubbles />} />
         <Route path="galaga" element={<Galaga />} />
         <Route path="lordofdonuts" element={<LordOfDonuts />} />
-        <Route path="wordgame" element={<WordGame />} />
+        <Route path="hangman" element={<Hangman />} />
         <Route path="/" element={<p />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
