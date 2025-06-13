@@ -8,11 +8,13 @@ import { Hangman } from "./gamewindows/hangman";
 import { TowerDefense } from "./gamewindows/defense";
 import { Tetris } from "./gamewindows/tetris";
 import "./games.css"
+import { AMFAS } from "./gamewindows/amfas";
 
 export const Games = () => {
   return (
     <div className="container-fluid text-center">
       <Routes>
+        <Route path="amfas" element={<AMFAS />} />
         <Route path="dogbubbles" element={<DogBubbles />} />
         <Route path="galaga" element={<Galaga />} />
         <Route path="lordofdonuts" element={<LordOfDonuts />} />
