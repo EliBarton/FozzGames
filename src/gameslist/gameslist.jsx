@@ -13,9 +13,11 @@ export const GamesList = () => {
             </NavLink>
             <NavLink className='nav-link' to='galaga'>Galaga Online
             </NavLink>
+            <NavLink className='nav-link' to='hangman'>Hangman
+            </NavLink>
             <NavLink className='nav-link' to='lordofdonuts'>Lord of the Donuts
             </NavLink>
-            <NavLink className='nav-link' to='hangman'>Hangman
+            <NavLink className='nav-link' to='towerdefense'>Tower Defense
             </NavLink>
         </div>
     );
