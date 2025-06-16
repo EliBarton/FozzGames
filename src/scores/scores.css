@@ -1,15 +1,42 @@
 .Leaderboard {
     width: 300px;
     margin: 0 auto;
+    text-align: center;
+}
+
+.dropdown {
+    margin-bottom: 20px;
+}
+
+.gameselect {
+    margin-right: 10px;
+}
+
+.score {
+    font-size: 18px;
+    color: #fff;
+}
+
+.drop {
+    margin-bottom: 20px;
+}
+
+h1 {
+    font-size: 24px;
+    color: #fff;
+    margin-bottom: 20px;
 }
 
 ol {
     list-style: none;
     padding: 0 !important;
+    color: #fff !important;
+    text-align: left;
 }
 
 .player-name {
     flex-grow: 1;
+    color: #fff;
 }
 
 .score {

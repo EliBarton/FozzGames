@@ -46,13 +46,13 @@ export default function App() {
                 Games
               </NavLink>
             </li>
-            {/* {authState === AuthState.Authenticated && (
+            {authState === AuthState.Authenticated && (
               <li className="nav-item">
                 <NavLink className="nav-link" to="scores">
                   Scores
                 </NavLink>
               </li>
-            )} */}
+            )}
             {authState === AuthState.Unauthenticated ? (
               <li className="nav-item">
                 <NavLink className="nav-link" to="login">
