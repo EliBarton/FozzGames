@@ -16,6 +16,17 @@ export const Galaga = () => {
   }, []);
 
   useEffect(() => {
+    const handleMessage = (event) => {
+      if (event.data?.type === 'readyForUserData') {
+        console.log('Iframe is ready to receive user data');
+        sendUserData(); // Move sendUserData to a shared scope so you can call it here
+      }
+    };
+    window.addEventListener('message', handleMessage);
+    return () => window.removeEventListener('message', handleMessage);
+  }, []);
+
+  useEffect(() => {
     const iframe = iframeRef.current;
     if (!iframe) return;
 
