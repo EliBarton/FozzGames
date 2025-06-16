@@ -3,9 +3,9 @@ import { collection, query, where, orderBy, limit, getDocs } from 'firebase/fire
 import { db } from '../../firebaseConfig'; // Adjust path to match your project structure
 import './scores.css';
 
-export function Scores() {
+export function Scores({ gameId }) {
   const [scores, setScores] = useState([]);
-  const [selectedGame, setSelectedGame] = useState('tetris'); // Default to 'tetris'
+  const [selectedGame, setSelectedGame] = useState(gameId || 'tetris'); // Default to 'tetris'
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
 

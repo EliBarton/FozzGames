@@ -3,6 +3,7 @@ import { getFirestore, collection, addDoc, serverTimestamp, query, where, orderB
 import { getAuth, onAuthStateChanged } from 'firebase/auth';
 import { db } from '../../../firebaseConfig'; // Assuming firebaseConfig.js is in the parent directory
 import CommentsSection from '../gamecomments/comments';
+import { Scores } from '../../scores/scores';
 
 // Define tetromino shapes (7 standard Tetris pieces) with their characters
 const tetrominoes = [
@@ -423,6 +424,9 @@ export const Tetris = () => {
       </div>
       <div>
         <CommentsSection gameId="tetris" />
+      </div>
+      <div>
+        <Scores />
       </div>
     </>
   );
