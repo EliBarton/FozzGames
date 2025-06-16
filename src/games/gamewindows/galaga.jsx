@@ -13,12 +13,18 @@ export const Galaga = () => {
         });
         return () => unsubscribe();
     }, []);
-    const userData = {
-        userId: user ? user.uid : 'guest',
-        username: user ? localStorage.getItem('userName') || 'Guest' : 'Guest',
-    };
-    // Expose user data to the global window object for Godot to access
-    window.godotUser = userData;
+    user.getIdToken().then((idToken) => {
+        const userData = {
+          userId: user.uid || 'guest',
+          username: localStorage.getItem('userName') || 'Guest',
+          idToken: idToken || '',
+        };
+        window.godotUser = userData;
+        console.log('User data passed to Godot:', userData);
+    })
+    .catch((error) => {
+        console.error('Error getting ID token:', error);
+    });
     return (
         <>
         <div>
