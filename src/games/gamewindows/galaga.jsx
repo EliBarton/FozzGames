@@ -1,4 +1,7 @@
 import CommentsSection from '../gamecomments/comments';
+import { useState, useEffect } from 'react';
+import { getAuth, onAuthStateChanged } from 'firebase/auth';
+
 export const Galaga = () => {
     const [user, setUser] = useState(null);
 
