@@ -1,5 +1,21 @@
 import CommentsSection from '../gamecomments/comments';
 export const Galaga = () => {
+    const [user, setUser] = useState(null);
+
+    // Monitor authentication state
+    useEffect(() => {
+        const auth = getAuth();
+        const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
+        setUser(currentUser);
+        });
+        return () => unsubscribe();
+    }, []);
+    const userData = {
+        userId: user ? user.uid : 'guest',
+        username: user ? localStorage.getItem('userName') || 'Guest' : 'Guest',
+    };
+    // Expose user data to the global window object for Godot to access
+    window.godotUser = userData;
     return (
         <>
         <div>
