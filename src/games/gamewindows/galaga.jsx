@@ -27,19 +27,6 @@ export const Galaga = () => {
   }, []);
 
   useEffect(() => {
-    const iframe = iframeRef.current;
-    if (!iframe) return;
-
-    const handleLoad = () => {
-      setIframeLoaded(true);
-      console.log('Iframe loaded, src:', iframe.src);
-    };
-
-    iframe.addEventListener('load', handleLoad);
-    return () => iframe.removeEventListener('load', handleLoad);
-  }, []);
-
-  useEffect(() => {
     if (!iframeLoaded || !iframeRef.current) return;
 
     const sendUserData = async () => {
