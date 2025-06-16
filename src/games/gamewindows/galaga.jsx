@@ -7,7 +7,6 @@ export const Galaga = () => {
   const iframeRef = useRef(null);
   const [iframeLoaded, setIframeLoaded] = useState(false);
 
-  // Monitor authentication state
   useEffect(() => {
     const auth = getAuth();
     const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
@@ -16,21 +15,19 @@ export const Galaga = () => {
     return () => unsubscribe();
   }, []);
 
-  // Detect iframe load
   useEffect(() => {
     const iframe = iframeRef.current;
     if (!iframe) return;
 
     const handleLoad = () => {
       setIframeLoaded(true);
-      console.log('Iframe loaded');
+      console.log('Iframe loaded, src:', iframe.src);
     };
 
     iframe.addEventListener('load', handleLoad);
     return () => iframe.removeEventListener('load', handleLoad);
   }, []);
 
-  // Pass user data to the iframe
   useEffect(() => {
     if (!iframeLoaded || !iframeRef.current) return;
 
@@ -54,10 +51,9 @@ export const Galaga = () => {
         }
       }
 
-      // Retry postMessage up to 3 times
       let attempts = 0;
-      const maxAttempts = 3;
-      const retryInterval = 500; // ms
+      const maxAttempts = 5;
+      const retryInterval = 1000;
 
       const trySendMessage = () => {
         try {
