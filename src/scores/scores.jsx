@@ -12,7 +12,7 @@ export function Scores({ gameId }) {
   // List of available games (extend as needed)
   const games = [
     { id: 'tetris', name: 'Tetris' },
-    { id: 'godot_game', name: 'Godot Game' }, // Replace with your Godot game's name
+    { id: 'galaga', name: 'Galaga' }, // Replace with your Godot game's name
   ];
 
   // Fetch scores for the selected game
