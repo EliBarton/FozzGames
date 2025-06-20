@@ -45,7 +45,7 @@ export const Galaga = () => {
     }
 
     const scoresRef = collection(db, 'scores');
-    const q = query(scoresRef, where('gameId', 'eq', 'galaga'), where('userId', 'eq', user.uid));
+    const q = query(scoresRef, where('gameId', '==', 'galaga'), where('userId', '==', user.uid));
     const querySnapshot = await getDocs(q);
 
     let docRef;
@@ -71,6 +71,17 @@ export const Galaga = () => {
     console.log('High score added with ID: ', docRef.id);
   }
 
+  const getUserScore = async () => {
+    const scoresRef = collection(db, 'scores');
+    const q = query(scoresRef, where('gameId', '==', 'galaga'), where('userId', '==', user.uid));
+    const querySnapshot = await getDocs(q);
+    if (!querySnapshot.empty) {
+      return querySnapshot.docs[0].data().score;
+    }
+    return 0;
+  }
+
+
   const sendUserData = async () => {
     if (!iframeLoaded || !iframeRef.current) {
       console.log('Iframe not loaded or ref not available');
@@ -78,24 +89,21 @@ export const Galaga = () => {
     }
 
     let userData = {
-      userId: 'guest',
-      username: localStorage.getItem('userName') || 'Guest',
-      idToken: '',
+      score: 0
     };
 
     if (user) {
       try {
         const idToken = await user.getIdToken();
         userData = {
-          userId: user.uid,
-          username: localStorage.getItem('userName') || 'Guest',
-          idToken,
+          score: await getUserScore()
         };
       } catch (error) {
         console.error('Error getting ID token:', error);
       }
     }
 
+    
     let attempts = 0;
     const maxAttempts = 5;
     const retryInterval = 1000;
