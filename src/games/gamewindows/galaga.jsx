@@ -3,6 +3,7 @@ import { getAuth, onAuthStateChanged } from 'firebase/auth';
 import CommentsSection from '../gamecomments/comments';
 import { addDoc, collection, query, where, getDocs, updateDoc } from 'firebase/firestore';
 import { db } from "../../../firebaseConfig";
+import { Scores } from '../../scores/scores';
 
 export const Galaga = () => {
   const [user, setUser] = useState(null);
@@ -145,6 +146,9 @@ export const Galaga = () => {
       </div>
       <div>
         <CommentsSection gameId="galaga" />
+      </div>
+      <div>
+        <Scores gameId="galaga" />
       </div>
     </>
   );
