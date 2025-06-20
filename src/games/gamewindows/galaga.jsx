@@ -1,6 +1,8 @@
 import { useState, useEffect, useRef } from 'react';
 import { getAuth, onAuthStateChanged } from 'firebase/auth';
 import CommentsSection from '../gamecomments/comments';
+import { addDoc, collection, query, where, getDocs, updateDoc } from 'firebase/firestore';
+import { db } from "../../../firebaseConfig";
 
 export const Galaga = () => {
   const [user, setUser] = useState(null);
@@ -26,10 +28,48 @@ export const Galaga = () => {
         console.log('Iframe is ready to receive user data');
         sendUserData();
       }
+      if (event.data?.type === 'updateHighScore') {
+        console.log('Received new high score from iframe:', event.data.highScore);
+        updateHighScore(event.data.highScore);
+      }
     };
     window.addEventListener('message', handleMessage);
     return () => window.removeEventListener('message', handleMessage);
   }, [user, iframeLoaded]);
+
+
+  const updateHighScore = async (score) => {
+    if (!user) {
+      console.log('User not logged in, cannot update high score.');
+      return;
+    }
+
+    const scoresRef = collection(db, 'scores');
+    const q = query(scoresRef, where('gameId', 'eq', 'galaga'), where('userId', 'eq', user.uid));
+    const querySnapshot = await getDocs(q);
+
+    let docRef;
+        if (!querySnapshot.empty) {
+          // Document exists, update it
+          const docToUpdate = querySnapshot.docs[0];
+          await updateDoc(docToUpdate.ref, {
+          score: score,
+          timestamp: new Date(),
+          username: localStorage.getItem('userName')
+    });
+    docRef = docToUpdate.ref; // Use the existing document reference
+        } else {
+          // Document doesn't exist, add a new one
+    docRef = await addDoc(scoresRef, {
+            gameId: 'galaga',
+            userId: user.uid,
+            score: score,
+            timestamp: new Date(),
+            username: localStorage.getItem('userName')
+    });
+    }
+    console.log('High score added with ID: ', docRef.id);
+  }
 
   const sendUserData = async () => {
     if (!iframeLoaded || !iframeRef.current) {
