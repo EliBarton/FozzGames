@@ -95,7 +95,6 @@ export const Galaga = () => {
 
     if (user) {
       try {
-        const idToken = await user.getIdToken();
         userData = {
           score: await getUserScore()
         };
