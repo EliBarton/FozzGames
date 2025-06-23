@@ -46,7 +46,7 @@ export const DogBubbles = () => {
     }
 
     const scoresRef = collection(db, 'scores');
-    const q = query(scoresRef, where('gameId', '==', 'galaga'), where('userId', '==', user.uid));
+    const q = query(scoresRef, where('gameId', '==', 'dogbubbles'), where('userId', '==', user.uid));
     const querySnapshot = await getDocs(q);
 
     let docRef;
@@ -62,7 +62,7 @@ export const DogBubbles = () => {
         } else {
           // Document doesn't exist, add a new one
     docRef = await addDoc(scoresRef, {
-            gameId: 'galaga',
+            gameId: 'dogbubbles',
             userId: user.uid,
             score: score,
             timestamp: new Date(),
@@ -74,7 +74,7 @@ export const DogBubbles = () => {
 
   const getUserScore = async () => {
     const scoresRef = collection(db, 'scores');
-    const q = query(scoresRef, where('gameId', '==', 'galaga'), where('userId', '==', user.uid));
+    const q = query(scoresRef, where('gameId', '==', 'dogbubbles'), where('userId', '==', user.uid));
     const querySnapshot = await getDocs(q);
     if (!querySnapshot.empty) {
       return querySnapshot.docs[0].data().score;
@@ -131,10 +131,23 @@ export const DogBubbles = () => {
     return (
         <>
         <div>
-            <iframe src={`${import.meta.env.BASE_URL}game_files/dog_bubbles/index.html`} width="270px" height="600px"></iframe>
+          <iframe
+            ref={iframeRef}
+            src={`${import.meta.env.BASE_URL}game_files/dog_bubbles/index.html`}
+            width="270px"
+            height="600px"
+            title="Dog Bubbles"
+            onLoad={() => {
+              console.log('Iframe loaded');
+              setIframeLoaded(true);
+            }}
+          ></iframe>
         </div>
         <div>
             <CommentsSection gameId="dogbubbles" />
+        </div>
+        <div>
+          <Scores gameId="dogbubbles" />
         </div>
         </>
     );
