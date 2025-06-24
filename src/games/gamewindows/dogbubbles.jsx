@@ -8,6 +8,7 @@ import { Scores } from '../../scores/scores';
 export const DogBubbles = () => {
     const [user, setUser] = useState(null);
   const iframeRef = useRef(null);
+  const [scoresUpdated, setScoresUpdated] = useState(false);
   const [iframeLoaded, setIframeLoaded] = useState(false);
 
   useEffect(() => {
@@ -38,6 +39,13 @@ export const DogBubbles = () => {
     return () => window.removeEventListener('message', handleMessage);
   }, [user, iframeLoaded]);
 
+  useEffect(() => {
+    if (scoresUpdated) {
+      // This empty dependency array means this effect runs once after the initial render.
+      // The actual score fetching in the Scores component will be triggered by the scoresUpdated state change.
+      setScoresUpdated(false);
+    }
+  }, [scoresUpdated]);
 
   const updateHighScore = async (score) => {
     if (!user) {
@@ -70,6 +78,7 @@ export const DogBubbles = () => {
     });
     }
     console.log('High score added with ID: ', docRef.id);
+    setScoresUpdated(true);
   }
 
   const getUserScore = async () => {
@@ -147,7 +156,7 @@ export const DogBubbles = () => {
             <CommentsSection gameId="dogbubbles" />
         </div>
         <div>
-          <Scores gameId="dogbubbles" />
+          <Scores gameId="dogbubbles" key={scoresUpdated ? 'scores-updated' : 'scores-initial'} />
         </div>
         </>
     );

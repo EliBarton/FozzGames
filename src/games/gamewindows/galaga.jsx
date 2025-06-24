@@ -8,6 +8,7 @@ import { Scores } from '../../scores/scores';
 export const Galaga = () => {
   const [user, setUser] = useState(null);
   const iframeRef = useRef(null);
+  const [scoresUpdated, setScoresUpdated] = useState(false);
   const [iframeLoaded, setIframeLoaded] = useState(false);
 
   useEffect(() => {
@@ -38,6 +39,13 @@ export const Galaga = () => {
     return () => window.removeEventListener('message', handleMessage);
   }, [user, iframeLoaded]);
 
+  // Effect to trigger Scores reload
+  useEffect(() => {
+    if (scoresUpdated) {
+      // This state change will cause the Scores component to re-render
+      setScoresUpdated(false); 
+    }
+  }, [scoresUpdated]);
 
   const updateHighScore = async (score) => {
     if (!user) {
@@ -70,6 +78,7 @@ export const Galaga = () => {
     });
     }
     console.log('High score added with ID: ', docRef.id);
+    setScoresUpdated(true); // Trigger Scores component reload
   }
 
   const getUserScore = async () => {
@@ -147,7 +156,7 @@ export const Galaga = () => {
         <CommentsSection gameId="galaga" />
       </div>
       <div>
-        <Scores gameId="galaga" />
+        <Scores gameId="galaga" key={scoresUpdated ? 'scores-updated' : 'scores-initial'} />
       </div>
     </>
   );
