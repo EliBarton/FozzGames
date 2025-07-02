@@ -7,8 +7,8 @@ import HomePage from './home/home';
 import { Scores } from './scores/scores';
 import { Play } from './play/play';
 import { AuthState } from './login/authState';
-import { GamesList } from './gameslist/gameslist';
 import { Games } from './games/games';
+import { Tools } from './tools/Tools';
 
 export function NotFound() {
   return (
@@ -46,6 +46,11 @@ export default function App() {
                 Games
               </NavLink>
             </li>
+            <li className="nav-item">
+              <NavLink className="nav-link" to="tools">
+                Tools
+              </NavLink>
+            </li>
             {authState === AuthState.Authenticated && (
               <li className="nav-item">
                 <NavLink className="nav-link" to="scores">
@@ -73,6 +78,7 @@ export default function App() {
           <Routes>
             <Route path="/" element={<HomePage />} />
             <Route path="/games/*" element={<Games />} />
+            <Route path="/tools/*" element={<Tools />} />
             <Route path="/play" element={<Play userName={userName} />} />
             <Route path="/scores" element={<Scores />} />
             <Route path='/login' element={
