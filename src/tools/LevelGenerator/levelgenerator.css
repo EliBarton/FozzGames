@@ -1,0 +1,11 @@
+.documentation-container {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: left;
+  background-color: #555;
+  padding: 20px;
+}
+
+details {
+  margin: 10px;
+}
