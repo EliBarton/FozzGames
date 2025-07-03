@@ -9,3 +9,15 @@
 details {
   margin: 10px;
 }
+
+li {
+  all:unset;
+  color: azure;
+  display: flex;
+  list-style-type: disc;
+}
+
+ul {
+  list-style-type: square;
+  padding-left: 20px;
+}

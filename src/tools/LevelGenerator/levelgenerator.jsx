@@ -19,6 +19,11 @@ const LevelGenerator = () => {
         <p>Detailed documentation on how to use the template and customize the generation process can be found here:</p>
 
         <details><summary>Overview</summary>
+          <h5>What's inside</h5>
+          <ul>
+            <li>Example level (level_1.tscn)</li>
+            <li>Level Generator (level_generator.tscn)</li>
+          </ul>
           <p>Content</p>
         </details>
 
@@ -55,7 +60,7 @@ const LevelGenerator = () => {
         </details>
 
         <details><summary>Example Game</summary>
-          <p>Content</p>
+          <iframe frameborder="0" src="https://itch.io/embed/3617224?linkback=true&amp;border_width=2&amp;bg_color=151d28&amp;fg_color=ebede9&amp;link_color=fa5c5c&amp;border_color=5d7fac" width="554" height="169"><a href="https://fozzgames.itch.io/all-my-friends-are-squares">All My Friends Are Squares by FozzGames</a></iframe>
         </details>
 
         <details><summary>License</summary>
