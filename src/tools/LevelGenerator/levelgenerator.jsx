@@ -19,6 +19,11 @@ const LevelGenerator = () => {
         <p>Detailed documentation on how to use the template and customize the generation process can be found here:</p>
 
         <details><summary>Overview</summary>
+          <h5>Level Generator Summary</h5>
+          <div className="ms-2">
+            <p>The level generator is a NavigationRegion2D with a script to connect random rooms together and create a navigation region to handle pathfinding between the rooms.</p>
+            <p>Rooms can be almost any size and shape, can have 1-4 doors, and have set rotation angles.</p>
+          </div>
           <h5>What's inside</h5>
           <div className="ms-3">
             <div>• Level Generator (level_generator.tscn)</div>
@@ -30,15 +35,21 @@ const LevelGenerator = () => {
             <div>• Example Items (treasure, taco)</div>
             <div>• Room Creation Helpers (wall, overlap_area)</div>
           </div>
-          <h5>Level Generator Summary</h5>
-          <div className="ms-2">
-            <p>The level generator is a NavigationRegion2D with a script to connect random rooms together and create a navigation region to handle pathfinding between the rooms.</p>
-            <p>Rooms can be almost any size and shape, can have 1-4 doors, and have a limited rotation.</p>
-          </div>
         </details>
 
         <details><summary>Installation/Setup</summary>
-          <p>Content</p>
+          <h5>Download</h5>
+          <div className="ms-2">
+            <div>The files are downloaded from the itch.io page linked above. It will download `levelgenerator.zip`. Extract the file to access it's contents.</div>
+          </div>
+          <h5>Opening Example Project</h5>
+          <div className="ms-2">
+            <div>You can open the project using Godot version 4.4 or later. Simply click import and open the project.godot file.</div>
+          </div>
+          <h5>Adding to existing Project</h5>
+          <div className="ms-2">
+            <div>If you want to add the level generator to an existing Godot 4.4 project, simply add the level_generator.tscn, level_generator.gd, and overlap_area_2d.tscn files to the project. Use the instructions below to create rooms for the level generator to use.</div>
+          </div>
         </details>
 
         <details><summary>Quick Start Guide</summary>

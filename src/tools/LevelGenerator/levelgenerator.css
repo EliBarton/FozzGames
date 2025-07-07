@@ -7,7 +7,11 @@
 }
 
 details {
-  margin: 10px;
+  padding: 10px;
+  background: #222;
+  outline-width: 1.5px;
+  outline-style: dashed;
+  outline-color: #999;
 }
 
 li {
