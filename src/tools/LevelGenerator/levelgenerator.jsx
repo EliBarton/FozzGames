@@ -48,32 +48,62 @@ const LevelGenerator = () => {
           </div>
           <h5>Adding to existing Project</h5>
           <div className="ms-2">
-            <div>If you want to add the level generator to an existing Godot 4.4 project, simply add the level_generator.tscn, level_generator.gd, and overlap_area_2d.tscn files to the project. Use the instructions below to create rooms for the level generator to use.</div>
+            <div>If you want to add the level generator to an existing Godot 4.4 project, simply add the level_generator.tscn, level_generator.gd, dead_end.tscn, and overlap_area_2d.tscn files to the project. Use the instructions below to create rooms for the level generator to use.</div>
           </div>
         </details>
 
-        <details><summary>Quick Start Guide</summary>
-          <p>Content</p>
-        </details>
-
         <details><summary>Creating Room Prefabs</summary>
-          <p>Content</p>
+          <h5>Room Creation Steps</h5>
+          <div className="ms-3">
+            <div>1. Create a new scene with a Node2D root.</div>
+            <div>2. Set the script for the root to `LevelRoom.gd`. (Or a script that extends LevelRoom)</div>
+            <div>3. Add walls, collision, art, etc.</div>
+            <div>4. Add an OverlapArea2D instance as a child of the root.</div>
+            <div>5. Add a CollisionPolygon2D as a child of the OverlapArea2D.</div>
+            <div>6. Set the polygon for the CollisionPolygon2D to cover the entire floor of the room (to prevent overlaps).</div>
+            <div>7. Create up to 4 Node2D children in the position of the room openings named "east", "west", "north", or "south" in the corresponding directions.</div>
+          </div>
         </details>
 
         <details><summary>Level Generation Logic</summary>
-          <p>Content</p>
+          <div className="ms-3">
+            <h6>1. Place the start room. (This is the room at index 0 of the room_prefabs array)</h6>
+            <h6>2. Pick a random room and try to fit it on a random room opening without overlapping areas</h6>
+            <h6>3. Repeat step 2 until the minimum amount of rooms is met</h6>
+            <h6>4. Try to place the special rooms on 2 random room openings</h6>
+            <h6>5. Place a "dead end" room on all remaining openings</h6>
+            <h6>6. Bake the navigation polygon</h6>
+            <h6>7. Spawn items and enemies</h6>
+          </div>
         </details>
 
         <details><summary>Spawning Items and Enemies</summary>
-          <p>Content</p>
+        <div className="ms-2">
+          <p>Spawning items and enemies is handled by each individual room. You can select what you would like to spawn by setting the export variables on a LevelRoom.</p>
+          <p>Spawns happen at random locations inside the collision polygon for the room's OverlapArea2D, slightly away from the walls.</p>
+          <p>The chances of something spawning can be changed as well.</p>
+          <p>If you want more than one thing to be able to spawn, you can create a new script that extends from LevelRoom and run the spawn function multiple times, as seen in the example `treasure_room.gd` and `great_room.gd`.</p>
+        </div>
         </details>
 
         <details><summary>Pathfinding</summary>
-          <p>Content</p>
+          <p>Before generating the level, you need to set the navigation polygon to be a large enough to cover the entire area of the finished dungeon.</p>
+          <p>When the rooms are finished being placed, the navigation polygon will be baked according to the collision bodies in the rooms.</p>
+          <p>NavigationAgent2D nodes can then be used for pathfinding between rooms.</p>
         </details>
 
         <details><summary>Customization</summary>
-          <p>Content</p>
+          <p>You can customize any part of the level generation process to best fit your needs.</p>
+          <h5>Customization Ideas</h5>
+          <div className="ms-3">
+            <div>• After generating the level, serialize it and send it to other players to allow for multiplayer</div>
+            <div>• Adjust the generation so that it mainly only places rooms in one direction</div>
+            <div>• Make some rooms more likely to generate than others</div>
+            <div>• Add secret passages and hidden rooms</div>
+            <div>• Adjust the way spawning and generation works based on a difficulty value</div>
+            <div>• </div>
+            <div>• </div>
+          </div>
         </details>
 
         <details><summary>FAQ</summary>
@@ -85,25 +115,27 @@ const LevelGenerator = () => {
         </details>
 
         <details><summary>License</summary>
-          <p>Godot Level Generation Template License
-            Copyright (c) 2025 [Your Name or Studio]
-
+          <p>
+            Godot Level Generation Template License<br />
+            Copyright (c) 2025 Eli Barton
+            <br /><br />
             Permission is granted to use, modify, and integrate this template into your own personal or commercial Godot Engine projects.
-
-            Restrictions:
-            - You may not resell, repackage, or redistribute the unmodified template, or substantial portions of it, whether for free or for payment.
-            - You may not claim authorship of the original template.
+            <br /><br />
+            Restrictions:<br />
+            - You may not resell, repackage, or redistribute the unmodified template, or substantial portions of it, whether for free or for payment.<br />
+            - You may not claim authorship of the original template.<br />
             - You may not upload the unmodified project to public repositories, asset stores, or marketplaces.
-
-            You may:
-            - Modify the template and use it in your own commercial or non-commercial games or tools.
-            - Share your modified version as part of a larger project, provided the original template is not the primary focus.
+            <br /><br />
+            You may:<br />
+            - Modify the template and use it in your own commercial or non-commercial games or tools.<br />
+            - Share your modified version as part of a larger project, provided the original template is not the primary focus.<br />
             - Credit the author (optional but appreciated).
-
+            <br /><br />
             This license is intended to allow wide use of the template while protecting it from unauthorized resale or redistribution.
-
-            For questions or licensing exceptions, contact: [your email or website]
+            <br /><br />
+            For questions or licensing exceptions, contact: elidbarton@gmail.com
           </p>
+
         </details>
 
       </div>
