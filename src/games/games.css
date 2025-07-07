@@ -9,3 +9,11 @@
   .comments-section{
     max-width: 600px;
   }
+  li {
+    font-size: medium;
+    padding: 0;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+    color: #333;
+  }

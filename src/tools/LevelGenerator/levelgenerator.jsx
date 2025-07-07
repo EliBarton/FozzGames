@@ -20,11 +20,21 @@ const LevelGenerator = () => {
 
         <details><summary>Overview</summary>
           <h5>What's inside</h5>
-          <ul>
-            <li>Example level (level_1.tscn)</li>
-            <li>Level Generator (level_generator.tscn)</li>
-          </ul>
-          <p>Content</p>
+          <div className="ms-3">
+            <div>• Level Generator (level_generator.tscn)</div>
+            <div>• Example Level (level_1.tscn)</div>
+            <div>• Example Structural Connectors (straight_hallway, crossroads, corner, dead_end)</div>
+            <div>• Example Rooms (start_room, large_room, treasure_room, great_room)</div>
+            <div>• Example Special Rooms (key_room, end_room)</div>
+            <div>• Example Enemy (bug)</div>
+            <div>• Example Items (treasure, taco)</div>
+            <div>• Room Creation Helpers (wall, overlap_area)</div>
+          </div>
+          <h5>Level Generator Summary</h5>
+          <div className="ms-2">
+            <p>The level generator is a NavigationRegion2D with a script to connect random rooms together and create a navigation region to handle pathfinding between the rooms.</p>
+            <p>Rooms can be almost any size and shape, can have 1-4 doors, and have a limited rotation.</p>
+          </div>
         </details>
 
         <details><summary>Installation/Setup</summary>
