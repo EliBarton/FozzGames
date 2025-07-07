@@ -101,13 +101,11 @@ const LevelGenerator = () => {
             <div>• Make some rooms more likely to generate than others</div>
             <div>• Add secret passages and hidden rooms</div>
             <div>• Adjust the way spawning and generation works based on a difficulty value</div>
-            <div>• </div>
-            <div>• </div>
           </div>
         </details>
 
         <details><summary>FAQ</summary>
-          <p>Content</p>
+          <p>No questions asked so far...</p>
         </details>
 
         <details><summary>Example Game</summary>
