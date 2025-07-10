@@ -13,7 +13,7 @@ const LevelGenerator = () => {
 
         <h2>Itch.io Page</h2>
         <p>You can find the project and download it from its itch.io page:</p>
-
+        <iframe frameborder="0" src="https://itch.io/embed/3708007" width="552" height="167"><a href="https://fozzgames.itch.io/godot-level-generation-template">Godot Level Generation Template by FozzGames</a></iframe>
 
         <h2>Documentation</h2>
         <p>Detailed documentation on how to use the template and customize the generation process can be found here:</p>
@@ -78,12 +78,12 @@ const LevelGenerator = () => {
         </details>
 
         <details><summary>Spawning Items and Enemies</summary>
-        <div className="ms-2">
-          <p>Spawning items and enemies is handled by each individual room. You can select what you would like to spawn by setting the export variables on a LevelRoom.</p>
-          <p>Spawns happen at random locations inside the collision polygon for the room's OverlapArea2D, slightly away from the walls.</p>
-          <p>The chances of something spawning can be changed as well.</p>
-          <p>If you want more than one thing to be able to spawn, you can create a new script that extends from LevelRoom and run the spawn function multiple times, as seen in the example `treasure_room.gd` and `great_room.gd`.</p>
-        </div>
+          <div className="ms-2">
+            <p>Spawning items and enemies is handled by each individual room. You can select what you would like to spawn by setting the export variables on a LevelRoom.</p>
+            <p>Spawns happen at random locations inside the collision polygon for the room's OverlapArea2D, slightly away from the walls.</p>
+            <p>The chances of something spawning can be changed as well.</p>
+            <p>If you want more than one thing to be able to spawn, you can create a new script that extends from LevelRoom and run the spawn function multiple times, as seen in the example `treasure_room.gd` and `great_room.gd`.</p>
+          </div>
         </details>
 
         <details><summary>Pathfinding</summary>
