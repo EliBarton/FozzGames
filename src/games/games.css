@@ -23,7 +23,11 @@ textarea.form-control {
   background-color: #fff; /* White background */
 }
 
-/* Ensure displayed comment text is black */
 .comment-text {
   color: #000;
-}.
+}
+
+.fw-bold,
+.comment-username {
+  color: #000 !important;
+}
