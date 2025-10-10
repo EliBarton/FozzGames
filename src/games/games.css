@@ -1,4 +1,3 @@
-
 .comment {
   max-width: 500px;
 }
@@ -17,3 +16,18 @@
     margin-bottom: 15px;
     color: #333;
   }
+
+/* Added to fix comment box text color */
+textarea.form-control {
+  color: #000; /* Black text */
+  background-color: #fff; /* White background */
+}
+
+.comment-text {
+  color: #000;
+}
+
+.fw-bold,
+.comment-username {
+  color: #000 !important;
+}
