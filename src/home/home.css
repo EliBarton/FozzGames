@@ -22,7 +22,7 @@
     height: 60%;
     background-size: cover;
     background-position: center;
-    background-image: url('/imgs/lordofdonuts.png');
+    background-image: url('/imgs/loopydogfights.png');
     display: flex;
     align-items: center;
     justify-content: center;
@@ -38,19 +38,59 @@
     align-items: center;
 }
 
+.latest-games-panel {
+    max-width: 500px;
+    margin: 0 auto;
+    text-align: left;
+    background-color: #333;
+    padding: 20px;
+    border-radius: 8px;
+    margin-top: 20px;
+}
+
 .item-list {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: stretch;
+    padding: 0;
+    list-style: none;
+    width: 100%; /* Ensure item-list takes full width of its parent */
+}
+
+.item-list li {
+    width: 100%; /* Ensure each list item takes full width of item-list */
 }
 
 .list-item {
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: space-between;
-    text-align: center;
-    padding: 8px;
+    gap: 15px;
+    padding: 10px;
     width: 100%;
     background-color: rgb(19, 19, 19);
+    border-radius: 5px;
+    margin-bottom: 10px;
+    color: white;
+    text-decoration: none;
+}
+
+.list-item:hover {
+    background-color: #555;
+}
+
+.list-item img {
+    border-radius: 3px;
+    flex-shrink: 0;
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+}
+
+.list-item span {
+    flex-grow: 1;
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
