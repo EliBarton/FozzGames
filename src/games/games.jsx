@@ -9,6 +9,7 @@ import { TowerDefense } from "./gamewindows/defense";
 import { Tetris } from "./gamewindows/tetris";
 import "./games.css"
 import { AMFAS } from "./gamewindows/amfas";
+import { LoopyDogfights } from "./gamewindows/loopydogfights";
 
 export const Games = () => {
   return (
@@ -21,6 +22,7 @@ export const Games = () => {
         <Route path="hangman" element={<Hangman />} />
         <Route path="towerdefense" element={<TowerDefense />} />
         <Route path="tetris" element={<Tetris />} />
+        <Route path="loopydogfights" element={<LoopyDogfights />} />
         <Route path="/" element={<p />} />
         <Route path="*" element={<NotFound />} />
       </Routes>

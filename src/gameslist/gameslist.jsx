@@ -19,6 +19,8 @@ export const GamesList = () => {
             </NavLink>
             <NavLink className='nav-link' to='lordofdonuts'>Lord of the Donuts
             </NavLink>
+            <NavLink className='nav-link' to='loopydogfights'>Loopy Dogfights
+            </NavLink>
             <NavLink className='nav-link' to='tetris'>Tetris
             </NavLink>
             <NavLink className='nav-link' to='towerdefense'>Tower Defense
