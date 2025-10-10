@@ -35,8 +35,17 @@ html, body {
     color: #fff;
     margin: 0;
     padding: 0 1em;
-    border: solid #fff thin;
     font-size: 1.5em;
+    text-decoration: none;
+    border: 2px solid #fff;
+    border-radius: 5px;
+    text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #007bff, 0 0 20px #007bff, 0 0 25px #007bff, 0 0 30px #007bff, 0 0 35px #007bff;
+    transition: box-shadow 0.3s ease-in-out, color 0.3s ease-in-out;
+  }
+  
+  .navbar-brand:hover {
+    color: #f0f0f0;
+    box-shadow: 0 0 10px #fff, 0 0 20px #007bff, 0 0 30px #007bff;
   }
   
   /* Navigation list: force horizontal row layout */
@@ -135,5 +144,3 @@ html, body {
     color: #333;
     background-color: #f0f0f0;
   }
-  
-  
