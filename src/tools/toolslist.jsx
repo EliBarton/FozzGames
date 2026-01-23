@@ -11,6 +11,8 @@ export const ToolsList = () => {
             </p>
             <NavLink className='nav-link' to='levelgenerator'>Godot Level Generator
             </NavLink>
+            <NavLink className='nav-link' to='colorpalette'>Color Palette Generator
+            </NavLink>
         </div>
     );
 }
