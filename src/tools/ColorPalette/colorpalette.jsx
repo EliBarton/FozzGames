@@ -310,6 +310,11 @@ const ColorPaletteGenerator = () => {
     navigator.clipboard.writeText(text);
   };
 
+  const copyColorToClipboard = (color) => {
+    copyToClipboard(color);
+    showNotification(`${color} copied to clipboard!`);
+  };
+
   const showNotification = (message) => {
     setNotification(message);
     setTimeout(() => setNotification(''), 3000);
@@ -347,7 +352,13 @@ const ColorPaletteGenerator = () => {
           <div className="palette-display">
             {palette.length > 0 ? (
               palette.map((color, index) => (
-                <div key={index} className="color-box" style={{ backgroundColor: color }}>
+                <div 
+                  key={index} 
+                  className="color-box" 
+                  style={{ backgroundColor: color }}
+                  onClick={() => copyColorToClipboard(color)}
+                  title="Click to copy"
+                >
                   <span className="color-hex">{color}</span>
                 </div>
               ))

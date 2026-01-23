@@ -115,14 +115,6 @@ export default function App() {
             </a>
             <a
               className="footer-link"
-              href="https://x.com/Fozz_MK"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              X
-            </a>
-            <a
-              className="footer-link"
               href="https://fozzgames.itch.io"
               target="_blank"
               rel="noopener noreferrer"
